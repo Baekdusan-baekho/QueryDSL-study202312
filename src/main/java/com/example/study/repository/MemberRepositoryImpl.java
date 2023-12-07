@@ -10,8 +10,8 @@ import java.util.List;
 import static com.example.study.entity.QMember.member;
 
 // QueryDSL용 인터페이스의 구현체는 반드시 이름의 끝이 Impl로 끝나야 자동으로 인식되어서
-// 원본 인터페이스 타입(MemberRepository)의 객체로도 사용이 가능합니다.
-@RequiredArgsConstructor
+// 원본 인터페이스 타입(MemberRepository)의 객체로도 사용이 가능합니다. 클래스 네임 끝에 Impl을 사용해야 사용 가능
+@RequiredArgsConstructor // 빈등록 주입하겠다 쿼리DSL콘피그에서 설정함
 public class MemberRepositoryImpl implements MemberRepositoryCustom{
 
     private final JPAQueryFactory queryFactory;
@@ -23,4 +23,6 @@ public class MemberRepositoryImpl implements MemberRepositoryCustom{
                 .fetch();
 
     }
+
+
 }
